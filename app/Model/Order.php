@@ -4,12 +4,17 @@ namespace App\Model;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Product extends Model
+class Order extends Model
 {
-    protected $fillable = ['name', 'price', 'restaurant_id'];
+    protected $fillable = ['status'];
 
     public function restaurant()
     {
         return $this->belongsTo(Restaurant::class);
+    }
+    
+    public function user()
+    {
+        return $this->belongsTo(User::class);
     }
 }
